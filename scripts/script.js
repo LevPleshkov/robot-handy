@@ -65,7 +65,7 @@
                 applyTouchImpulse(cubeBodies[i], STRENGTH);
             });
 
-            Patches.inputs.setScalar("cubeHeight_" + i, objects[i].transform.y);
+            // Patches.inputs.setScalar("cubeHeight_" + i, objects[i].transform.y);
         }
     });
     
@@ -264,7 +264,7 @@
                     this.body.position.y = ROBOT_HEIGHT + 0.1;
                     this.isOnTimeout = false;
                 }, 2000));
-            }, 500));                                                                           // timeout AA
+            }, 0));                                                                           // timeout AA
 
             Diagnostics.log("pause");
         },
@@ -305,6 +305,7 @@
 
         setTarget: function() {
             Diagnostics.log("target ->");
+
             // target is displaced cube with smallest number
             if (cubesNotInPlace.length != 0 && this.isEmpty) {
                 Diagnostics.log("to cube");
